@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--Used ChatGPT to make code visually appeasing-->
+<html lang="en">
+<head>
+    <title>Wordle Game</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .wordle-container {
+            text-align: center;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 80px; /* Adjusted width */
+            padding: 5px;
+            margin-right: 5px;
+            text-align: center;
+        }
+
+        input[type="submit"], button {
+            padding: 5px 10px;
+            font-size: 14px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #28a745;
+            margin-left: 10px;
+        }
+
+        #feedback {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #guesses {
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+
+        .green {
+            color: green;
+            font-weight: bold;
+        }
+
+        .yellow {
+            color: #FFC425;
+            font-weight: bold;
+        }
+
+        .gray {
+            color: gray;
+            font-weight: bold;
+        }
+
+        #winMessage {
+            color: #28a745; /* Adjusted color for better visibility */
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wordle-container">
+        <h2>Wordle Game</h2>
+        <p>Guess the 5-letter word:</p>
+        <form>
+          <label for="guess">Guess:</label>
+          <input type="text" id="guessIn" name="guessIn" size="5" maxlength="5">
+          <input type="submit" value="Submit" id="submit">
+          <button type="button" id="newGame">New Game</button>
+        </form>
+        <p id="feedback"></p>
+        <div id="guesses" contenteditable="true" name="guesses" rows="10" cols="50"></div>
+        <p id="winMessage"></p>
+    </div>
+    <script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
